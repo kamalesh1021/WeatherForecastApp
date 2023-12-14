@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APIKey</key>
+	<string>0d93f18f715347938ef74529231112</string>
+	<key>APIBaseURL</key>
+	<string>https://api.weatherapi.com/v1/</string>
+</dict>
+</plist>
