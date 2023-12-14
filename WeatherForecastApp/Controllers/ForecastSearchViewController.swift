@@ -16,7 +16,7 @@ protocol SearchViewDelegate: AnyObject {
 class ForecastSearchViewController: UIViewController {
 
     //MARK: - Outlets
-    @IBOutlet weak var searchCity: UISearchBar!
+    @IBOutlet weak var searchCitySearchBar: UISearchBar!
     @IBOutlet weak var clearBtn: UIButton!
     
     
@@ -26,11 +26,11 @@ class ForecastSearchViewController: UIViewController {
     // MARK: - ViewLifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchCity.delegate = self
+        searchCitySearchBar.delegate = self
         // Swipe to interactivePopGestureRecognizer
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         // Open the keyboard when the view appears
-        searchCity.becomeFirstResponder()
+        searchCitySearchBar.becomeFirstResponder()
     }
     
 }

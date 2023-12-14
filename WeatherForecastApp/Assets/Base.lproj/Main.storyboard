@@ -158,39 +158,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KVj-mH-wAq">
-                                                <rect key="frame" x="10" y="420" width="394" height="428"/>
-                                                <color key="backgroundColor" red="0.71372549019999998" green="0.87843137250000003" blue="0.91764705879999997" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="428" id="rKy-m8-6cY"/>
-                                                    <constraint firstAttribute="width" constant="394" id="y9Q-4d-BjX"/>
-                                                </constraints>
-                                                <view key="tableHeaderView" contentMode="scaleToFill" id="n3L-2t-dff">
-                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Days Forecast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oBd-Qq-kAr">
-                                                            <rect key="frame" x="49" y="0.0" width="345" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-nj-wm3">
-                                                            <rect key="frame" x="2" y="5" width="40" height="40"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                                <sections/>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xzD-KQ-4rb"/>
-                                                </connections>
-                                            </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUI-Pa-4d3">
                                                 <rect key="frame" x="10" y="210" width="394" height="200"/>
                                                 <subviews>
@@ -225,6 +192,39 @@
                                                     <constraint firstAttribute="height" constant="200" id="fYU-C7-Hbm"/>
                                                 </constraints>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KVj-mH-wAq">
+                                                <rect key="frame" x="10" y="420" width="394" height="428"/>
+                                                <color key="backgroundColor" red="0.71372549019999998" green="0.87843137250000003" blue="0.91764705879999997" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="428" id="rKy-m8-6cY"/>
+                                                    <constraint firstAttribute="width" constant="394" id="y9Q-4d-BjX"/>
+                                                </constraints>
+                                                <view key="tableHeaderView" contentMode="scaleToFill" id="n3L-2t-dff">
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Days Forecast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oBd-Qq-kAr">
+                                                            <rect key="frame" x="49" y="0.0" width="345" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-nj-wm3">
+                                                            <rect key="frame" x="2" y="5" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <sections/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xzD-KQ-4rb"/>
+                                                </connections>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -290,13 +290,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="37k-gs-jvC"/>
                     <connections>
-                        <outlet property="ForcastRecord" destination="KVj-mH-wAq" id="dgL-pG-7eO"/>
                         <outlet property="cureentWeatherIcon" destination="Zeq-ON-d8h" id="gm5-PH-3d3"/>
-                        <outlet property="daiyWeatherRecord" destination="sfW-m3-y4l" id="ZHw-M5-Q0B"/>
+                        <outlet property="dailyWeatherCollectionView" destination="sfW-m3-y4l" id="Lro-gA-4bY"/>
                         <outlet property="dateLabel" destination="vNv-WT-aYM" id="WaP-k9-j1i"/>
+                        <outlet property="forecastRecordTableView" destination="KVj-mH-wAq" id="n80-gl-pu2"/>
                         <outlet property="gradientView" destination="TbE-8P-ovZ" id="vvp-qS-5o0"/>
                         <outlet property="placeLabel" destination="P3Y-88-FnQ" id="7bq-D1-wAX"/>
-                        <outlet property="pullScroll" destination="Tot-Hm-mJM" id="gjm-f6-XtL"/>
+                        <outlet property="pullToRefreshScrollView" destination="Tot-Hm-mJM" id="jpT-c3-UGc"/>
                         <outlet property="temperatureLabel" destination="G7o-h6-Llg" id="IWx-1W-SWY"/>
                         <outlet property="timeLabel" destination="xtF-fl-5bl" id="eTD-GW-OWA"/>
                         <outlet property="weatherDescrptionLabel" destination="X3u-Dn-4TK" id="g3q-RQ-LfW"/>
@@ -395,7 +395,7 @@
                     <navigationItem key="navigationItem" id="Qk1-RR-jAy"/>
                     <connections>
                         <outlet property="clearBtn" destination="NRX-zH-FEQ" id="oar-rM-DbC"/>
-                        <outlet property="searchCity" destination="4Ln-6i-y7J" id="BkA-yV-eCp"/>
+                        <outlet property="searchCitySearchBar" destination="4Ln-6i-y7J" id="gEM-pa-5GP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zps-UN-LqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,11 +11,11 @@ import CoreLocation
 class CurrentWeatherViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var pullScroll : UIScrollView!
+    @IBOutlet weak var pullToRefreshScrollView : UIScrollView!
     @IBOutlet weak var gradientView : UIView!
     @IBOutlet weak var cureentWeatherIcon : UIImageView!
-    @IBOutlet weak var daiyWeatherRecord : UICollectionView!
-    @IBOutlet weak var ForcastRecord : UITableView!
+    @IBOutlet weak var dailyWeatherCollectionView: UICollectionView!
+    @IBOutlet weak var forecastRecordTableView: UITableView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -60,7 +60,7 @@ class CurrentWeatherViewController: UIViewController {
     // MARK: - ScrollView Refresh
     func scrollToRefresh(){
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        pullScroll.refreshControl = refreshControl
+        pullToRefreshScrollView.refreshControl = refreshControl
     }
     
     // MARK: - Custom Methods
@@ -73,12 +73,12 @@ class CurrentWeatherViewController: UIViewController {
     
     ///MARK: Register TableView
     func setupTableview(){
-        ForcastRecord.register(UINib(nibName: "ForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTableViewCell")
+        forecastRecordTableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTableViewCell")
     }
     
     ///MARK : Register CollectionView
     func setupCollectionView(){
-        daiyWeatherRecord.register(UINib(nibName: "DailyWeatherDetailsCell", bundle: nil), forCellWithReuseIdentifier: "DailyWeatherDetailsCell")
+        dailyWeatherCollectionView.register(UINib(nibName: "DailyWeatherDetailsCell", bundle: nil), forCellWithReuseIdentifier: "DailyWeatherDetailsCell")
     }
     
      ///MARK :
@@ -106,5 +106,4 @@ class CurrentWeatherViewController: UIViewController {
         self.currentWeatherViewModel.fetchWeatherData(currentCoordinatesString)
     }
 }
-
 

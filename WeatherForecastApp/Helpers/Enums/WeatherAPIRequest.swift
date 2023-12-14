@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// Enum defining keys for Weather API requests
 enum WeatherAPIRequest: String {
     case apiKey = "key"
     case location = "q"
@@ -14,3 +14,4 @@ enum WeatherAPIRequest: String {
     case aqi = "aqi"
     case alerts = "alerts"
 }
+

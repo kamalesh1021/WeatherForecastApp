@@ -2,37 +2,46 @@
 //  LocationManager.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 13/12/23.
+//  Created by kamalesh on 13/12/23.
 //
 import UIKit
 import CoreLocation
 
 
+// Singleton class for managing location services.
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
+    // MARK: - Shared Instance
     static let shared = LocationManager()
     
+    // MARK: - Private Properties
     private var locationManager: CLLocationManager!
     private var completionHandler: ((CLLocation?, Error?) -> Void)?
     private var didReceiveFirstLocation = false
     
-    
+    //MARK: - Private initializer to set up the CLLocationManager.
     private override init() {
         super.init()
         setupLocationManager()
     }
     
+    /// Initialize and configure the CLLocationManager.
     private func setupLocationManager() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    // MARK: - Request Location Permission Method
+
+        // Requests location permission from the user.
     func getCurrentLocation(completion: @escaping (CLLocation?, Error?) -> Void) {
         // Check and request location permissions
         locationManager.requestWhenInUseAuthorization()
         DispatchQueue.global(qos: .background).async {
+            // Check if location services are enabled
             if CLLocationManager.locationServicesEnabled() {
+                // Request location authorization on the main thread
                 DispatchQueue.main.async {
                     self.locationManager.delegate = self
                     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -50,7 +59,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - CLLocationManagerDelegate Methods
     
+    // Handle updated location information.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             let coordinates = location.coordinate
@@ -61,11 +72,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         completionHandler?(nil, error)
         locationManager.stopUpdatingLocation()
     }
     
+   // Called when the authorization status for the app changes.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             // Location permission granted
@@ -76,6 +89,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+
+    //MARK: - Called when the authorization status for the app changes.
     func requestLocationPermission() {
         guard let locationManager = locationManager else {
             return
@@ -96,6 +111,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - Show Permission Denied Alert and Exit Method
+
+       /// Shows an alert when location access is denied and exits the app if the user cancels.
     private func promptUserToEnableLocation() {
         // Show an alert or navigate to the app settings to enable location
         let alert = UIAlertController(
@@ -103,9 +121,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             message: "Please enable location access in Settings to use this App.",
             preferredStyle: .alert
         )
+        // Action to open app settings
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             exit(EXIT_SUCCESS)
         } ))
+        // Action to open app settings
         alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
         }))

@@ -2,16 +2,17 @@
 //  ProgressHud.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 14/12/23.
+//  Created by kamalesh on 14/12/23.
 //
 
-import Foundation
 import UIKit
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
+// `ProgressHud` is a class providing a shared instance for displaying progress HUDs.
 class ProgressHud {
+    // Shared instance for accessing the `ProgressHud` functionality.
     static let sharedInstance = ProgressHud()
 
     var container = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))

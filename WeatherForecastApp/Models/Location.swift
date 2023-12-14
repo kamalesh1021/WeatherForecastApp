@@ -17,19 +17,19 @@ struct Location : Codable {
     let localtime_epoch : Int?
     let localtime : String?
     
-    
+    // Gets the formatted local date in short month format.
     var formattedLocalDate: String? {
         guard let localtime = localtime?.formatDate(with: .shortMonth, timeStaamp: false) else { return "N/A" }
         return localtime
     }
     
+    // Gets the formatted local time in day and hour format.
     var formattedLocalTime: String? {
         guard let localtime = localtime?.formatDate(with: .dayHour, timeStaamp: false) else { return "N/A" }
         return localtime
     }
     
-    
-    
+    // Combines the name, region, and country into a single address string.
     var combinedAddress : String?{
         var combinedString : String?
         if let name = name,let region = region,let country = country {

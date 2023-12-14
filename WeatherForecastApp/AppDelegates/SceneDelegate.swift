@@ -56,14 +56,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
 }
 
+// MARK: - SceneDelegate Extension Conforming to CLLocationManagerDelegate
 
 extension SceneDelegate : CLLocationManagerDelegate {
     
+    // MARK: - Request Location Permission Method
+
+        /// Requests location permission from the user.
     func requestLocationPermission() {
+        // Initialize and configure the CLLocationManager
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         
+        // Check if location services are enabled
         if CLLocationManager.locationServicesEnabled() {
+            // Request location authorization on the main thread
             DispatchQueue.main.async {
                 self.locationManager?.requestWhenInUseAuthorization()
             }
@@ -73,6 +80,9 @@ extension SceneDelegate : CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - CLLocationManagerDelegate Methods
+    
+    /// Called when the authorization status for the app changes.
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
@@ -89,23 +99,27 @@ extension SceneDelegate : CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - Show Permission Denied Alert and Exit Method
+
+        /// Shows an alert when location access is denied and exits the app if the user cancels.
     func showPermissionDeniedAlertAndExit() {
         let alertController = UIAlertController(
             title: "Location Access Denied",
             message: "This app requires location access. Please enable location access in Settings to go further",
             preferredStyle: .alert
         )
-
+        // Action to open app settings
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
             }
         }
-        
+        // Action to cancel and exit the app
         alertController.addAction(settingsAction)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             exit(EXIT_FAILURE) // This will exit the app
         }))
+        // Present the alert from the root view controller
         window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }

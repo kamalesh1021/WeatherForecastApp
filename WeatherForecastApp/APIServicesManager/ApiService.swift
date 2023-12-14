@@ -11,14 +11,14 @@ import Combine
 
 class ApiService {
     
-    // MARK: Shared Instance
+    // MARK: - Shared Instance
     static let shared = ApiService()
 
-    // MARK: Private Initializer
+    // MARK: -Private Initializer
     private init() {}
 
     
-    //MARK: Returns: A publisher that emits the decoded response or an error.
+    //MARK: -Returns: A publisher that emits the decoded response or an error.
     func fetchData<T: Decodable>(url: URL, parameters: [String: Any]) -> AnyPublisher<T, Error> {
         return AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString))
             .publishDecodable(type: T.self)
@@ -35,5 +35,4 @@ class ApiService {
             .receive(on: DispatchQueue.main)// Ensure the publisher sends events on the main thread
             .eraseToAnyPublisher() // Erase the type for better abstraction
     }
-    
 }

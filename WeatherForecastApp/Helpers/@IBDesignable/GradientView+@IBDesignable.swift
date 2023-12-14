@@ -2,11 +2,13 @@
 //  GradientView+@IBDesignable.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 14/12/23.
+//  Created by kamalesh on 14/12/23.
 //
 
 import UIKit
 
+
+// `GradientView` is a custom UIView subclass that can be designed in Interface Builder.
 @IBDesignable
 class GradientView: UIView {
         @IBInspectable var startColor: UIColor = .blue {

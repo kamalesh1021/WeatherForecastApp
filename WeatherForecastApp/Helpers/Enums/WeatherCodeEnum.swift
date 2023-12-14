@@ -2,13 +2,13 @@
 //  WeatherCodeEnum.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 11/12/23.
+//  Created by kamalesh on 11/12/23.
 //
 
 import Foundation
 
 
-
+// Enum representing weather conditions with associated code values.
 enum WeatherCode: Int {
     case sunny = 1000
     case partlyCloudy = 1003
@@ -168,6 +168,7 @@ enum WeatherCode: Int {
 
 
 
+// Function to determine Icon
 func iconImage(for weatherType: WeatherCode, isDay: Int) -> String? {
     let Day = !(isDay == 0) ? true : false
     let imageName: String

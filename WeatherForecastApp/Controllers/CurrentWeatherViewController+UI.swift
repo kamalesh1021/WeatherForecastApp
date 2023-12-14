@@ -2,7 +2,7 @@
 //  CurrentWeatherViewController+UI.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 14/12/23.
+//  Created by kamalesh on 14/12/23.
 //
 
 import UIKit
@@ -12,12 +12,12 @@ extension CurrentWeatherViewController {
     // Reloads the data in the Forecast table view.
     /// Reloads the data in the Forecast table view.
     func reloadTableView(){
-        self.ForcastRecord.reloadData()
+        self.forecastRecordTableView.reloadData()
     }
     
     /// Reloads the data in the Daily Weather collection view.
     func reloadColllectionView(){
-        self.daiyWeatherRecord.reloadData()
+        self.dailyWeatherCollectionView.reloadData()
     }
     
     // MARK: - UI Configuration

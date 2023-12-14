@@ -2,12 +2,15 @@
 //  UIApplicationExtension.swift
 //  WeatherForecastApp
 //
-//  Created by Empulse on 14/12/23.
+//  Created by kamalesh on 14/12/23.
 //
 
 import UIKit
 
+// Extension to find the topmost view controller in the view hierarchy
 extension UIApplication {
+    
+    // Method to get the topmost view controller
     class func topViewController(
         base: UIViewController? = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
     ) -> UIViewController? {
