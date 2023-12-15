@@ -57,7 +57,7 @@ Welcome to the Weather Forecast App! This section provides guidance on using the
 
 #### Current Weather
 
-- **Temperature:** View the current temperature in Celsius or Fahrenheit.
+- **Temperature:** View the current temperature in Celsius.
 - **Conditions:** Check the current weather conditions, such as clear skies, rain, or snow.
 
 #### Forecast
@@ -66,7 +66,6 @@ Welcome to the Weather Forecast App! This section provides guidance on using the
 
 ### Settings
 
-- **Units:** Customize the units for temperature, wind speed, etc., based on your preferences.
 - **Location Settings:** Adjust location settings for accurate weather information.
 
 ### Troubleshooting
@@ -97,4 +96,53 @@ Components:
 Model: Represents the data and business logic. In the Weather Forecast App, the data models for weather information and user settings are part of the Model.
 View: Represents the user interface. Custom UIView subclasses, such as GradientView and RoundedCornerView, follow the View aspect.
 ViewModel: Acts as an intermediary between the Model and View, handling data presentation and user interactions. The ViewModel logic is implemented in Swift files associated with specific views.
+
+## Dependencies
+
+The Weather Forecast App leverages external libraries to enhance functionality. Below is a list of dependencies and their roles:
+
+### Alamofire
+
+- **Description:** Alamofire is an HTTP networking library written in Swift, widely used for simplifying network requests and responses.
+- **Purpose:** In the Weather Forecast App, Alamofire is utilized for making API requests to fetch weather data efficiently.
+- **Integration:**
+  - Alamofire is integrated into the project using CocoaPods. Make sure you have CocoaPods installed on your machine.
+  - Add the following line to your `Podfile`:
+
+    ```ruby
+    pod 'Alamofire', '~> 5.8'
+    ```
+  - Run `pod install` in the terminal to install the Alamofire dependency.
+
+### Benefits of Alamofire Integration
+
+- **Simplified Networking:** Alamofire streamlines the process of making network requests, handling responses, and managing data serialization.
+- **Robust and Reliable:** Leveraging a well-established library like Alamofire ensures reliable and stable networking capabilities.
+- **Community Support:** Alamofire is actively maintained by the community, providing updates and support for the latest Swift and iOS versions.
+
+
+## Weather API Integration
+
+The Weather Forecast App leverages the WeatherAPI service to provide accurate and up-to-date weather information. Below are the details on how the WeatherAPI is configured within the app: 
+- Source Website : www.weatherapi.com
+- API KEY Vaild till 25/12/2023
+- If API KEY expired Please checkout the www.weatherapi.com
+
+### WeatherAPI Configuration
+
+- **Base URL:** The base URL for the WeatherAPI service is specified in the `APIConfigure.plist` file within the app's source code.
+- **API Key:** To access the WeatherAPI and fetch weather data, an API key is required. The key is securely stored and can be found in the `APIConfigure.plist` file.
+
+### Accessing the WeatherAPI
+
+To access weather data, follow these steps:
+
+1. Locate the `APIConfigure.plist` file in the app's source code.
+2. Retrieve the base URL and API key from the plist file.
+3. Construct your API requests using the base URL, and include the API key in the request headers.
+
+## Conclusion
+
+In conclusion, the README serves as a crucial guide for anyone interacting with the Weather Forecast App. Whether you're a developer looking to contribute, a user exploring the app, or a potential client evaluating the project, the README provides vital information to streamline your experience.
+
 
