@@ -32,4 +32,5 @@ This Weather Forecast App provides users with up-to-date weather information, in
    ```bash
    git clone https://github.com/kamalesh1021/WeatherForecastApp.git
 
-Usage
+2.Usage
+   1.Open the project in Xcode.
