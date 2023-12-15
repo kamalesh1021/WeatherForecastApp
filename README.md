@@ -33,4 +33,4 @@ This Weather Forecast App provides users with up-to-date weather information, in
    git clone https://github.com/kamalesh1021/WeatherForecastApp.git
 
 2.Usage
-   1.Open the project in Xcode.
+1.Open the project in Xcode.
