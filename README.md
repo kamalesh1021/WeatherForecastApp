@@ -31,6 +31,11 @@ This Weather Forecast App provides users with up-to-date weather information, in
 
    ```bash
    git clone https://github.com/kamalesh1021/WeatherForecastApp.git
+2. Open the project in Xcode.
+3. Install dependencies using CocoaPods:
+cd WeatherForecastApp
+pod install
+4. 
 
-2.Usage
-1.Open the project in Xcode.
+
+
