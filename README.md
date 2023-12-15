@@ -13,7 +13,8 @@ This Weather Forecast App provides users with up-to-date weather information, in
 
 ## Screenshots
 
- screenshots 
+ ![CurrentLocation](https://github.com/kamalesh1021/WeatherForecastApp/assets/153336530/4503e647-0d03-4cd1-817d-58b532893e47) & ![SearchView](https://github.com/kamalesh1021/WeatherForecastApp/assets/153336530/366158e7-ab62-44ae-9815-e56fdc6ada2b)
+
 
 ## Getting Started
 
@@ -29,5 +30,4 @@ This Weather Forecast App provides users with up-to-date weather information, in
 
    ```bash
    git clone https://github.com/kamalesh1021/WeatherForecastApp.git
-![CurrentLocation](https://github.com/kamalesh1021/WeatherForecastApp/assets/153336530/4503e647-0d03-4cd1-817d-58b532893e47)
-![SearchView](https://github.com/kamalesh1021/WeatherForecastApp/assets/153336530/366158e7-ab62-44ae-9815-e56fdc6ada2b)
+
