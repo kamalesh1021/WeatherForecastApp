@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YourApp needs to access  your location to show current Weather</string>
 </dict>
 </plist>

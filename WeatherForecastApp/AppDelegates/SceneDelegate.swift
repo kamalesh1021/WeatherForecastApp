@@ -71,9 +71,9 @@ extension SceneDelegate : CLLocationManagerDelegate {
         // Check if location services are enabled
         if CLLocationManager.locationServicesEnabled() {
             // Request location authorization on the main thread
-            DispatchQueue.main.async {
+           
                 self.locationManager?.requestWhenInUseAuthorization()
-            }
+        
 
         } else {
             print("Not Handled")
