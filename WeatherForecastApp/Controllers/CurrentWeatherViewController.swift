@@ -23,13 +23,13 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var weatherDescrptionLabel: UILabel!
     
     // MARK: - Variables
-     let currentWeatherViewModel = CurrentWeatherViewModel()
-     var currentWeatherModel : Current?
-     var currentLocation : Location?
-     var conditionModel : Condition?
-     var ForecastdayModel : [Forecastday]?
-     var hourModel : [Hour]?
-     private let refreshControl = UIRefreshControl()
+    let currentWeatherViewModel = CurrentWeatherViewModel()
+    var currentWeatherModel : Current?
+    var currentLocation : Location?
+    var conditionModel : Condition?
+    var ForecastdayModel : [Forecastday]?
+    var hourModel : [Hour]?
+    private let refreshControl = UIRefreshControl()
     
     // MARK: - ViewLifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +81,7 @@ class CurrentWeatherViewController: UIViewController {
         dailyWeatherCollectionView.register(UINib(nibName: "DailyWeatherDetailsCell", bundle: nil), forCellWithReuseIdentifier: "DailyWeatherDetailsCell")
     }
     
-     ///MARK :
+    ///MARK :
     func setupDelegate(){
         currentWeatherViewModel.delegate = self
     }
@@ -93,7 +93,13 @@ class CurrentWeatherViewController: UIViewController {
             if let currentCoordinates = coordinates {
                 print("location -->\(String(describing: coordinates))")
                 let currentCoordinatesString = "\(currentCoordinates.coordinate.latitude),\(currentCoordinates.coordinate.longitude)"
-                self.getWeatherReportDetails(currentCoordinatesString)
+                if Reachability.isConnectedToNetwork(){
+                    self.getWeatherReportDetails(currentCoordinatesString)
+                }else {
+                    self.present((currentCoordinatesString.alert("No Internet Connection"," please check you are Internet", "Retry", { (action) in
+                        self.fetchLocation()
+                    })), animated: true, completion: nil)
+                }
             } else if error != nil {
                 print("Location Update error\(String(describing: error))")
                 

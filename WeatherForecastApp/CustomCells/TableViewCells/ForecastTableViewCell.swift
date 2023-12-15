@@ -38,8 +38,10 @@ class ForecastTableViewCell: UITableViewCell {
 
     func setUpForcastUI(_ indexPath: Forecastday) {
         self.temperatureLabel.text = indexPath.day?.avgtemp_c?.formattedTemperature()
+        
+        
         self.dateLabel.text = indexPath.formattedDate
-        self.dayLabel.text = indexPath.formattedWeek
+        self.dayLabel.text = indexPath.day?.condition?.text
 
         //filterCommonValues function to get filtered hours
         let filteredHours = filterCommonValues(indexPath.hour ?? [])
